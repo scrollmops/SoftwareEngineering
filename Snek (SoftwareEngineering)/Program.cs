@@ -17,7 +17,6 @@ namespace Snek__SoftwareEngineering_
             {
                 var readkey = Console.ReadKey();
                 Console.Clear();
-                
                 var direction = readkey.Key.GetDirection(snake.Direction);
                 wasSuccess = game.Move(direction);
             }
