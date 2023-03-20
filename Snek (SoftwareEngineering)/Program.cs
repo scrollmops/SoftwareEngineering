@@ -6,7 +6,10 @@ namespace Snek__SoftwareEngineering_
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int gridSize = 10;
+            IGrid grid = new Grid(gridSize);
+
+            grid.DisplayGrid();
         }
     }
 }
