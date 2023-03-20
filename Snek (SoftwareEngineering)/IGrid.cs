@@ -10,5 +10,8 @@ namespace Snek__SoftwareEngineering_
 
         void DisplayGrid();
         void SpawnMouse();
+        void AddPosition(Position position);
+        void DeletePosition(Position position);
+        bool IsMouseAvailable(Position position);
     }
 }

@@ -47,6 +47,16 @@ namespace Snek__SoftwareEngineering_
             }
         }
 
+        public void AddPosition(Position position)
+        {
+            _grid[position.X, position.Y] = 'S';
+        }
+
+        public void DeletePosition(Position position)
+        {
+            _grid[position.X, position.Y] = '+';
+        }
+
         public void SpawnMouse()
         {
             Random random = new Random();
@@ -59,6 +69,15 @@ namespace Snek__SoftwareEngineering_
             }
             _grid[x, y] = 'M';
         }
+
+        public bool IsMouseAvailable(Position position)
+        {
+            if (_grid[position.X, position.Y] == 'M')
+                return true;
+            return false;
+        }
+
+
 
     }
 }

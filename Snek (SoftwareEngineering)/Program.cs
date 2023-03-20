@@ -12,6 +12,16 @@ namespace Snek__SoftwareEngineering_
             IGame game = new Game(grid, snake);
 
             grid.DisplayGrid();
+            var wasSuccess = true;
+            while (wasSuccess)
+            {
+                var readkey = Console.ReadKey();
+                Console.Clear();
+                
+                var direction = readkey.Key.GetDirection(snake.Direction);
+                wasSuccess = game.Move(direction);
+            }
+            grid.DisplayGrid();
         }
     }
 }

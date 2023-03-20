@@ -6,5 +6,6 @@ namespace Snek__SoftwareEngineering_
 {
     public interface IGame
     {
+        bool Move(Direction direction);
     }
 }
