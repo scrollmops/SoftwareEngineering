@@ -4,11 +4,7 @@ using System.Text;
 
 namespace Snek__SoftwareEngineering_
 {
-    public interface IGrid
+    public interface IGame
     {
-        public int Size { get; }
-
-        void DisplayGrid();
-        void SpawnMouse();
     }
 }

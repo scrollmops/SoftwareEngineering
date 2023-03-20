@@ -10,7 +10,7 @@ namespace Snek__SoftwareEngineering_
 
         public int Size { get; }
 
-        public Grid(int size)
+        public Grid(int size, Position snakeHead)
         {
             Size = size;
             _grid = new char[size, size];
@@ -21,6 +21,7 @@ namespace Snek__SoftwareEngineering_
                     _grid[i, j] = '+';
                 }
             }
+            AddSnakePosition(snakeHead);
         }
 
         public void DisplayGrid()
@@ -35,5 +36,29 @@ namespace Snek__SoftwareEngineering_
                 Console.WriteLine();
             }
         }
+
+        private void AddSnakePosition(Position snakeHead)
+        {
+            var temp = snakeHead;
+            while (temp != null)
+            {
+                _grid[temp.X, temp.Y] = 'S';
+                temp = temp.Next;
+            }
+        }
+
+        public void SpawnMouse()
+        {
+            Random random = new Random();
+            int x = random.Next(0, Size);
+            int y = random.Next(0, Size);
+            while (_grid[x, y] != '+')
+            {
+                x = random.Next(0, Size);
+                y = random.Next(0, Size);
+            }
+            _grid[x, y] = 'M';
+        }
+
     }
 }

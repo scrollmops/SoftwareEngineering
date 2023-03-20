@@ -7,7 +7,9 @@ namespace Snek__SoftwareEngineering_
         static void Main(string[] args)
         {
             int gridSize = 10;
-            IGrid grid = new Grid(gridSize);
+            ISnake snake = new Snake(gridSize, Direction.RIGHT, 3);
+            IGrid grid = new Grid(gridSize, snake.Head);
+            IGame game = new Game(grid, snake);
 
             grid.DisplayGrid();
         }
