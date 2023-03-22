@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Snek__SoftwareEngineering_
 {
-    class Grid : IGrid
+    public class Grid : IGrid
     {
         private char[,] _grid;
 
